@@ -54,6 +54,7 @@
   background-color: gainsboro;
   border: none;
   border-radius: 100px;
+  padding-bottom: 4px;
 }
 
 .cartItem__incrDec button:hover{
@@ -62,6 +63,10 @@
 
 .cartItem__incrDec button:active{
   box-shadow: unset;
+}
+
+.cartItem__incrDec p{
+padding-top: 14px;
 }
 
 .cartItem__removeButton{
