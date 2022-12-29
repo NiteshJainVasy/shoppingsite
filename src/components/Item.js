@@ -10,6 +10,7 @@ import Swal from 'sweetalert2'
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
+
 import {useNavigate} from 'react-router-dom'
 
 function Items({id, title, image, price,quantity=0}) {
@@ -21,8 +22,10 @@ function Items({id, title, image, price,quantity=0}) {
     
   const navigate = useNavigate()
   const cart = useSelector((state) => state.cart)
-  const notify = () => toast("Product Added Successfully!");
+
+  const notify = () => {  toast.success("Product Added Successfully!",{autoClose: 1000, } )};
   const limited = () => toast("Product Added Successfully!");
+
    const NumberList = (id, title) => {
       cart && cart.map((item, index) =>{
 if (id == item.id && title == item.title){
@@ -47,7 +50,7 @@ return (
         alt="item"
       />
       
-        <ToastContainer Type ="success" />
+        <ToastContainer  />
    
 
           {NumberList(id ,title)===15?  

@@ -1,7 +1,9 @@
 import './total.css'
 import {useSelector} from 'react-redux'
+
 function TotalShopping() {
   const cart = useSelector((state) => state.cart)
+
   const getTotal = () => {
     let totalQuantity = 0
     let totalPrice = 0
@@ -11,17 +13,15 @@ function TotalShopping() {
     })
     return {totalPrice, totalQuantity}
   }
+
+
   return (
     <div className="total">
-      <h2>ORDER SUMMARY</h2>
-      <div>
+  <h2>ORDER SUMMARY</h2>
+    <div>
         <p className="total__p">
-          total (0 items) : <strong>${getTotal().totalQuantity}</strong>
-        </p>
-
-        <p className="total__p">
-  total ({getTotal().totalQuantity} items) 
-  : <strong>${getTotal().totalPrice}</strong>
+  Total ({getTotal().totalQuantity} Items) 
+  : <strong>&#8377; {getTotal().totalPrice}</strong>
 </p>
       </div>
     </div>
