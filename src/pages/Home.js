@@ -34,7 +34,7 @@ const getTotalQuantity = () => {
 const todoList =[{
   id: 1,
   image: "https://st.depositphotos.com/1765561/4857/i/450/depositphotos_48579839-stock-photo-opened-blue-stand-mixer.jpg",
-  price:229,
+  price: 300,
   quantity: 0,
   title: 
   "Kenwood kMix Stand Miser for Baking, Stylish Kitchen Mixer with K-beater, Dough Hook and Whisk"
@@ -59,7 +59,7 @@ const todoList =[{
           {
               id: 4,
               image: "https://media.very.co.uk/i/very/P6LTG_SQ1_0000000071_CHARCOAL_SLf?$300x400_retinamobilex2$",
-              price:98,
+              price:100,
               quantity: 0,
               title: 
               "Amazon Echo (3rd generation) | Smart speaker with Alexa, Charcoal Fabric"

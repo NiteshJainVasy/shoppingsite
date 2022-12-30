@@ -26,6 +26,23 @@ quantity = item.quantity
 return quantity;
  }
 
+
+ const getTotal = (id, title) => {
+  let totalQuantity = 0
+  let totalPrice = 0
+  cart.forEach(item => {
+      if (id == item.id && title == item.title){
+        totalQuantity += item.quantity
+    totalPrice += item.price * item.quantity
+      }
+
+
+  })
+  return {totalPrice, totalQuantity}
+}
+
+
+
   return (
  
     <div className="cartItem"  hidden={NoOfquantity(id ,title) ===0 ? true : false}>
@@ -36,6 +53,8 @@ return quantity;
         <p className="cartItem__price">
           <small>$</small>
           <strong>{price}</strong>
+          
+        
         </p>
 
    {NoOfquantity(id ,title)===15?  
@@ -52,10 +71,17 @@ return quantity;
 :""}
 <ToastContainer Type ="success" />
 
+<p className="total__p">
+  Total 
+  : <strong>&#8377;{getTotal(id, title).totalPrice}</strong>
+</p>
+
 <div className='cartItem__incrDec'>
+  
 <button onClick={() => dispatch(decrementQuantity(id))}>-</button>
 
 <p>{NoOfquantity(id ,title)  }</p> 
+
 
 <button onClick={() => {dispatch(incrementQuantity(id)); handleShow() } }>+</button>
 </div>
